@@ -15,7 +15,7 @@
 		</ul>
 	</nav>
 	</header>
-	<?php include 'templates/index.tpl.php';>
+	<?php include 'templates/index.tpl.php';?>
 	<footer>
 	<footer>
 

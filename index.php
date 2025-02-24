@@ -11,7 +11,7 @@
 	<h1>Ide jon a menu</h1>
 	</nav>
 	</header>
-	<?php include 'templates/pages/index.tpl.php';?>
+	<?php include 'templates/index.tpl.php';?>
 	<?php include 'templates/pages/gallery.tpl.php';?>
 	<?php include 'templates/pages/conntact.tpl.php';?>
 	<?php include 'templates/pages/massages.tpl.php';?>

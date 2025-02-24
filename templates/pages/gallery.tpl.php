@@ -4,7 +4,7 @@
 
 <div class="responsive">
   <div class="gallery">
-    <a target="_blank" href="a1.jpeg">
+    <a target="_blank" href="/images/a1.jpeg">
       <img src="/images/a1.jpeg" alt="A1" width="600" height="400">
     </a>
     <div class="desc">Add a description of the image here</div>

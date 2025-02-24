@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>WebProgramozás I beadandó </title>
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="/styles/website.css">
 	<!-- komm -->
 <head>
 <body>

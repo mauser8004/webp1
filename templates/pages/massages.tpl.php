@@ -1,4 +1,4 @@
-<div class=messages>
+<div>
  <table>
   <tr>
     <th>Mikor</th>

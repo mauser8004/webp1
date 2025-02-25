@@ -7,47 +7,36 @@
   </div>
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="uname"><b>Felhasználónév</b></label>
+    <input type="text" placeholder="Felhasználónév" name="uname" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label for="psw"><b>Jelszó</b></label>
+    <input type="password" placeholder="Jelszó" name="psw" required>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    <button type="submit">Bejelentkezés</button>
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
 </form> 
 </div>
 <div class="reg">
  <form action="#">
   <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
+    <h1>Regisztráció</h1>
     <hr>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <label for="email"><b>Felhasználónév</b></label>
+    <input type="text" placeholder="" name="uname" id="email" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    <label for="psw"><b>Jelszó</b></label>
+    <input type="password" placeholder="Jelszó" name="psw" id="psw" required>
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <label for="psw-repeat"><b>Jelszó megismétlése</b></label>
+    <input type="password" placeholder="Jelszó megismétlése" name="psw-repeat" id="psw-repeat" required>
     <hr>
 
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" class="registerbtn">Regisztráció</button>
   </div>
 
-  <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 </form> 
 </div>

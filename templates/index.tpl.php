@@ -1,6 +1,6 @@
 <div>
-	<p>Főoldal temája</p>
-z Arduino egy szabad szoftveres, nyílt forráskódú elektronikai fejlesztőplatform, arra tervezve, hogy a különböző projektekben az elektronikus eszközök könnyebben hozzáférhetőek, kezelhetőek legyenek. Széles tömegek számára elérhető, mivel olcsó, könnyen beszerezhető, egyszerűen programozható, és csatlakoztatható más eszközökhöz.
+<p>Főoldal temája</p>
+Az Arduino egy szabad szoftveres, nyílt forráskódú elektronikai fejlesztőplatform, arra tervezve, hogy a különböző projektekben az elektronikus eszközök könnyebben hozzáférhetőek, kezelhetőek legyenek. Széles tömegek számára elérhető, mivel olcsó, könnyen beszerezhető, egyszerűen programozható, és csatlakoztatható más eszközökhöz.
 
 A fejlesztői platform az úgynevezett IDE-ből, és egy Arduino Board-ból áll. Előbbi segítségével programokat írhatunk és tesztelhetünk számítógépen, utóbbi pedig egy hardver eszköz, amelyre az előzőleg elkészített programokat feltölthetjük a számítógépen keresztül, majd elektronikus eszközöket vezérelhetünk a segítségével.
 

@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>WebProgramozás I beadandó </title>
-	<link rel="stylesheet" href="/styles/website.css">
+	 <link rel="stylesheet" href="/styles/website.css"> 
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 	<!-- komm -->
 <head>
 <body>

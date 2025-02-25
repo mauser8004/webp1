@@ -15,11 +15,6 @@ Board-ok
 
 Az Arduino Board-ok többféle változatban készülnek, amelyek méretben, a mikrovezérlő típusában, a belső memóriában, a be- és kimenetek számában különböznek. Vannak amelyek rendelkeznek beépített Ethernet, Bluetooth, Wi-Fi csatlakozási lehetőséggel.
 Forgalomban lévő modellek
-	 	<video width="320" height="240" style="float: right" controls>
-  		<source src="movie.mp4" type="video/mp4">
-  		<source src="movie.ogg" type="video/ogg">
-			Your browser does not support the video tag.
-		</video>
 
 
     Arduino/Genuino UNO
@@ -58,6 +53,11 @@ Már nem gyártott modellek
     Arduino Leonardo
     Arduino Esplora
     Arduino Yún
+	 	<video width="320" height="240" style="float: right" controls>
+  		<source src="movie.mp4" type="video/mp4">
+  		<source src="movie.ogg" type="video/ogg">
+			Your browser does not support the video tag.
+		</video>
 
 Shield-ek
 

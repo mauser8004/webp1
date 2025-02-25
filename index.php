@@ -8,9 +8,31 @@
 <head>
 <body>
 	<header>
-	<nav class=menu>
-	<h1>Ide jon a menu</h1>
-	</nav>
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Főoldal</a>
+  <a href="#news">Képek</a>
+  <a href="#contact">Üzenetek</a>
+  <a href="#about">Bejelentkezés</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div style="padding-left:16px">
+  <h2>Responsive Topnav Example</h2>
+  <p>Resize the browser window to see how it works.</p>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 	</header>
 	<?php include 'templates/index.tpl.php';?>
 	<?php include 'templates/pages/gallery.tpl.php';?>

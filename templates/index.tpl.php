@@ -1,5 +1,6 @@
 <div>
-<p>Főoldal temája
+<p>
+
 Az Arduino egy szabad szoftveres, nyílt forráskódú elektronikai fejlesztőplatform, arra tervezve, hogy a különböző projektekben az elektronikus eszközök könnyebben hozzáférhetőek, kezelhetőek legyenek. Széles tömegek számára elérhető, mivel olcsó, könnyen beszerezhető, egyszerűen programozható, és csatlakoztatható más eszközökhöz.
 
 A fejlesztői platform az úgynevezett IDE-ből, és egy Arduino Board-ból áll. Előbbi segítségével programokat írhatunk és tesztelhetünk számítógépen, utóbbi pedig egy hardver eszköz, amelyre az előzőleg elkészített programokat feltölthetjük a számítógépen keresztül, majd elektronikus eszközöket vezérelhetünk a segítségével.
@@ -11,8 +12,8 @@ Szoftver
 		</iframe> 
 Az Arduino IDE egy kereszt-platformos Java nyelven írt fejlesztőkörnyezet, amely segítségével Arduino programokat készíthetünk, tesztelhetünk, majd az Arduino Board-okra tölthetjük. Az induláshoz a fejlesztőeszköz több mintaprogramot tartalmaz, amelyek segítségével egyszerűen megtanulhatjuk, hogyan tudunk LED-et villogtatni, fényerőt szabályozni, vagy a számítógéppel kommunikálni USB-n keresztül. Az Arduino programokat egy C/C++ alapú programozási nyelven írhatjuk, így az ezeket a nyelveket ismerők könnyen kiismerhetik magukat a környezetben. AZ IDE-hez tartozik a "Wiring" nevezetű C/C++ programkönyvtár, amellyel egyszerűen végezhetjük el a leggyakoribb input/output műveleteket.
 Hardver
-Board-ok
-
+Board-ok</p>
+<p>
 Az Arduino Board-ok többféle változatban készülnek, amelyek méretben, a mikrovezérlő típusában, a belső memóriában, a be- és kimenetek számában különböznek. Vannak amelyek rendelkeznek beépített Ethernet, Bluetooth, Wi-Fi csatlakozási lehetőséggel.
 Forgalomban lévő modellek
 
@@ -40,7 +41,8 @@ Kisméretű, ATmega32U4 processzorral rendelkező változat, amely micro USB csa
     Arduino/Genuino MKR1000
 
 Wi-Fi támogatással ellátott, 32 bites lap, ami IoT projektekhez lett tervezve. Gyárilag működik akkumulátorról, tölti is azt USB-ről. SAMD21 és 256 kB flash memória van benne, valamint egy Wi-Fi modul és ahhoz való antenna.[7]
-Már nem gyártott modellek
+</p>
+<p>Már nem gyártott modellek
 
     Arduino Duemilanove
     Arduino Ethernet
@@ -58,7 +60,8 @@ Már nem gyártott modellek
   		<source src="movie.ogg" type="video/ogg">
 			Your browser does not support the video tag.
 		</video>
-
+</p>
+<p>
 Shield-ek
 
 Az Arduino-k funkcionalitását könnyedén kiegészíthetjük az úgynevezett Shield-ekkel, amelyek a Board-okhoz egyszerűen illeszthető elektronikai áramkörök. Ezek segítségével azt Arduino-t akár közvetlenül az internetre csatlakoztathatjuk, motorokat, LED-eket, vezérelhetünk vele, vagy Wi-Fi, Bluetooth hálózatra kapcsolódhatunk. A jelenlegi hivatalos Arduino Shield-ek:
@@ -75,5 +78,5 @@ Az Arduino-k funkcionalitását könnyedén kiegészíthetjük az úgynevezett S
     Arduino Servo Shield
 
 Ezeken kívül több cég gyárt világszerte Arduino kompatibilis Shield-eket, különböző célokra. 
-</p>
+</p><br>
 </div>

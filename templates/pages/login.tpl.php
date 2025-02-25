@@ -1,5 +1,5 @@
 
-<div>
+<div class="reg">
  <form action="#" method="post">
 
   <div class="imgcontainer">

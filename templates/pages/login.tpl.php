@@ -1,4 +1,7 @@
- <form action="action_page.php" method="post">
+
+<div>
+ <form action="#" method="post">
+
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
@@ -21,7 +24,9 @@
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form> 
- <form action="action_page.php">
+</div>
+<div class="reg">
+ <form action="#">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -45,3 +50,4 @@
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 </form> 
+</div>

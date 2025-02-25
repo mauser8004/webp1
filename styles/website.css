@@ -1,13 +1,13 @@
 /* reg eleje */
-* {box-sizing: border-box}
+reg.* {box-sizing: border-box}
 
 /* Add padding to containers */
-.container {
+reg.container {
   padding: 16px;
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+reg.input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -16,19 +16,19 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+reg.input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
 /* Overwrite default styles of hr */
-hr {
+reg.hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
 
 /* Set a style for the submit/register button */
-.registerbtn {
+reg..registerbtn {
   background-color: #04AA6D;
   color: white;
   padding: 16px 20px;
@@ -39,17 +39,17 @@ hr {
   opacity: 0.9;
 }
 
-.registerbtn:hover {
+reg.registerbtn:hover {
   opacity:1;
 }
 
 /* Add a blue text color to links */
-a {
+reg.a {
   color: dodgerblue;
 }
 
 /* Set a grey background color and center the text of the "sign in" section */
-.signin {
+reg.signin {
   background-color: #f1f1f1;
   text-align: center;
 }

@@ -10,10 +10,11 @@
 	<header>
 
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Főoldal</a>
-  <a href="#news">Képek</a>
-  <a href="#contact">Üzenetek</a>
-  <a href="#about">Bejelentkezés</a>
+  <a href="" class="active">Főoldal</a>
+  <a href="kepek">Képek</a>
+  <a href="kapcsolat">Kapcsolat</a>
+  <a href="uzenetek">Üzenetek</a>
+  <a href="login">Bejelentkezés</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>

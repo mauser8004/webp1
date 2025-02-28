@@ -43,6 +43,6 @@ if($oldal=="kepek") include("templates/pages/gallery.tpl.php");
 if($oldal=="kapcsolat") include("templates/pages/conntact.tpl.php");
 if($oldal=="uzenetek") include("templates/pages/massages.tpl.php");
 if($oldal=="login") include("templates/pages/login.tpl.php");
-include("templates/footer.tpl.php")?>
+include("templates/footer.tpl.php");?>
 </body>
 </html>

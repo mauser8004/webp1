@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: mysql.omega:3306
--- Létrehozás ideje: 2025. Feb 28. 05:10
+-- Létrehozás ideje: 2025. Feb 28. 05:29
 -- Kiszolgáló verziója: 5.7.42-log
 -- PHP verzió: 7.2.34-54+0~20241224.101+debian12~1.gbpb6068e
 
@@ -42,7 +42,7 @@ CREATE TABLE `mess` (
 
 CREATE TABLE `users` (
   `lname` varchar(30) NOT NULL,
-  `passwd` varchar(30) NOT NULL
+  `passwd` char(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

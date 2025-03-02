@@ -82,4 +82,4 @@ Az Arduino-k funkcionalitását könnyedén kiegészíthetjük az úgynevezett S
 
 Ezeken kívül több cég gyárt világszerte Arduino kompatibilis Shield-eket, különböző célokra. 
 </p><br>
-</div>
+</div><br>

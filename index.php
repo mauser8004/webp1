@@ -11,6 +11,7 @@
 <?php
 echo $_SERVER['QUERY_STRING'];
 include("templates/header.tpl.php");
+include("includes/sqlconnect.php");
 $oldal = $_SERVER['QUERY_STRING'];
 if($oldal=="") include("templates/index.tpl.php");
 if($oldal=="kepek") include("templates/pages/gallery.tpl.php");

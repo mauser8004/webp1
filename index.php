@@ -1,23 +1,16 @@
-<DOCTYPE html>
-<html>
-<head>
-	<title>WebProgramozás I beadandó </title>
-	 <!-- <link rel="stylesheet" href="styles/website.css"> -->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-	<!-- komm -->
-<head>
-<body>
-
 <?php
-echo $_SERVER['QUERY_STRING'];
-include("templates/header.tpl.php");
-include("includes/sqlconnect.php");
-$oldal = $_SERVER['QUERY_STRING'];
-if($oldal=="") include("templates/index.tpl.php");
-if($oldal=="kepek") include("templates/pages/gallery.tpl.php");
-if($oldal=="kapcsolat") include("templates/pages/conntact.tpl.php");
-if($oldal=="uzenetek") include("templates/pages/massages.tpl.php");
-if($oldal=="login") include("templates/pages/login.tpl.php");
-include("templates/footer.tpl.php");?>
-</body>
-</html>
+	include('./includes/config.inc.php');
+	$oldal = $_SERVER['QUERY_STRING'];
+	echo $_SERVER['QUERY_STRING'];
+	if ($oldal!="") {
+		if (isset($oldalak[$oldal]) && file_exists("./templates/pages/{$oldalak[$oldal]['fajl']}.tpl.php")) {
+			$keres = $oldalak[$oldal];
+		}
+		else { 
+			$keres = $hiba_oldal;
+			header("HTTP/1.0 404 Not Found");
+		}
+	}
+	else $keres = $oldalak['/'];
+	include('./templates/index.tpl.php'); 
+?>

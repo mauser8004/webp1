@@ -1,4 +1,21 @@
 <?php
+$ablakcim = array(
+    'cim' => 'WebProgramozás I. Beadandó',
+);
+
+$fejlec = array(
+    'kepforras' => 'logo.png',
+    'kepalt' => 'logo',
+    'cim' => 'WebProgramotás I. Beadandó',
+	'motto' => ''
+);
+
+$lablec = array(
+    'copyright' => 'Copyright '.date("Y").'.',
+    'ceg' => 'Tanulas Kft.'
+);
+$hiba_oldal = array ('fajl' => '404', 'szoveg' => 'A keresett oldal nem található!');
+
 $oldalak = array(
 	'/' => array('fajl' => 'fooldal', 'szoveg' => 'Főoldal', 'menun' => array(1,1)),
 	'kepek' => array('fajl' => 'gallery', 'szoveg' => 'Képek', 'menun' => array(1,1)),

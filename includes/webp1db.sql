@@ -43,6 +43,8 @@ CREATE TABLE `mess` (
 CREATE TABLE `users` (
   `lname` varchar(30) NOT NULL,
   `passwd` char(128) NOT NULL
+  `csaladinev` varchar(50) NOT NULL,
+  `utonev` varchar(50) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

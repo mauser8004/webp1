@@ -5,9 +5,8 @@
 <head>
 	<meta charset="utf-8">
 	<title><?= $ablakcim['cim'] . ( (isset($ablakcim['mottó'])) ? ('|' . $ablakcim['mottó']) : '' ) ?></title>
-
-
-	<?php if(file_exists('./css/'.$keres['fajl'].'.css')) { ?><link rel="stylesheet" href="css/main.css" type="text/css"><?php } ?>
+	<link rel="stylesheet" href="./styles/stilus.css" type="text/css">
+	<?php if(file_exists('./styles/'.$keres['fajl'].'.css')) { ?><link rel="stylesheet" href="./styles/<?= $keres['fajl']?>.css" type="text/css"><?php } ?>
 </head>
 <body>
 	<header>

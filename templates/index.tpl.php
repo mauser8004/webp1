@@ -35,7 +35,7 @@
         </div>
     </div>
     <footer>
-//////////////////
+
 <?php
 if(isset($_POST['lname']) && isset($_POST['passwd'])) {
     try {
@@ -61,7 +61,7 @@ else {
     header("Location: .");
 }
 ?>
-////////////////////////////////
+
         <?php if(isset($lablec['copyright'])) { ?>&copy;&nbsp;<?= $lablec['copyright'] ?> <?php } ?>
 		&nbsp;
         <?php if(isset($lablec['ceg'])) { ?><?= $lablec['ceg']; ?><?php } ?>

@@ -9,7 +9,7 @@ if(isset($_POST['lname']) && isset($_POST['passwd'])) {
         // Felhsználó keresése
         $sqlSelect = "select id, csaladinev, utonev from users where lnmae = :bejelentkezes and passwd = sha512(:passwd)";
         $sth = $dbh->prepare($sqlSelect);
-        $sth->execute(array(':bejelentkezes' => $_POST['felhasznalo'], ':passwd' => $_POST['passwd']));
+        $sth->execute(array(':bejelentkezes' => $_POST['lname'], ':passwd' => $_POST['passwd']));
         $row = $sth->fetch(PDO::FETCH_ASSOC);
         if($row) {
             $_SESSION['csn'] = $row['csaladinev']; $_SESSION['un'] = $row['utonev']; $_SESSION['login'] = $_POST['lname'];

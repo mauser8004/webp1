@@ -4,10 +4,6 @@ $ablakcim = array(
 );
 
 $fejlec = array(
-    'kepforras' => 'logo.png',
-    'kepalt' => 'logo',
-    'cim' => 'WebProgramozás I. Beadandó',
-	'motto' => ''
 );
 
 $lablec = array(

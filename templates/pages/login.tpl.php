@@ -1,4 +1,4 @@
-    <form action = "belep" method = "post">
+    <form action = "/logicals/belep.php" method = "post">
       <fieldset>
         <legend>Bejelentkezés</legend>
         <br>

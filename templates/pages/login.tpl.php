@@ -1,4 +1,4 @@
-    <form action = "belep.php" method = "post">
+    <form action = "/logicals/belep.php" method = "POST">
       <fieldset>
         <legend>Bejelentkezés</legend>
         <br>
@@ -9,7 +9,7 @@
       </fieldset>
     </form>
     <h3>Regisztrálja magát, ha még nem felhasználó!</h2>
-    <form action = "regisztral" method = "post">
+    <form action = "regisztral" method = "POST">
       <fieldset>
         <legend>Regisztráció</legend>
         <br>

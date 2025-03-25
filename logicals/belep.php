@@ -2,22 +2,28 @@
 if(isset($_POST['lname']) && isset($_POST['passwd'])) {
     try {
         // Kapcsolódás
-        $dbh = new PDO('mysql:host=localhost;dbname=webp1db', 'webp1db', 'J3grvN7YjfVtBGwD2RxzdS',
-                        array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-        $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
-        
-        // Felhsználó keresése
-        $sqlSelect = "select id, csaladinev, utonev from users where lnmae = :bejelentkezes and passwd = sha512(:passwd)";
-        $sth = $dbh->prepare($sqlSelect);
-        $sth->execute(array(':bejelentkezes' => $_POST['lname'], ':passwd' => $_POST['passwd']));
-        $row = $sth->fetch(PDO::FETCH_ASSOC);
+	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+	$dbh = new mysqli("localhost", "webp1db", "J3grvN7YjfVtBGwD2RxzdS", "webp1db");
+	if(mysqli_connect_errno()){
+ 				echo mysqli_connect_error();
+		}
+	$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
+	        // Felhsználó keresése
+	$passwd = hash('sha512', 'X94T7Duxn6RFy3CY2ZqjQP');
+        $sqlSelect = "select  csaladinev, utonev from users where lname = 'zoli' and passwd = '$passwd';";
+        $sth = $dbh->query($sqlSelect);
+        //$sth->execute(array(':bejelentkezes' => 'zoli', ':passwd' => 'X94T7Duxn6RFy3CY2ZqjQP'));
+        $row = $sth->fetch_assoc();
         if($row) {
             $_SESSION['csn'] = $row['csaladinev']; $_SESSION['un'] = $row['utonev']; $_SESSION['login'] = $_POST['lname'];
-        }
+
+	}
+	echo "sikerul";
     }
     catch (PDOException $e) {
         $errormessage = "Hiba: ".$e->getMessage();
-    }      
+	echo "Nem sikerul";
+    }
 }
 else {
     header("Location: .");

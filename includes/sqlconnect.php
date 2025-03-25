@@ -8,7 +8,7 @@
 		}
 	$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 	        // Felhsználó keresése
-	$passwd = sha512(X94T7Duxn6RFy3CY2ZqjQP);
+	$passwd = hash('sha512', 'X94T7Duxn6RFy3CY2ZqjQP');
         $sqlSelect = "select  csaladinev, utonev from users where lname = 'zoli' and passwd = '$passwd';";
         $sth = $dbh->query($sqlSelect);
         //$sth->execute(array(':bejelentkezes' => 'zoli', ':passwd' => 'X94T7Duxn6RFy3CY2ZqjQP'));

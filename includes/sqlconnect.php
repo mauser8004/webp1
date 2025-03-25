@@ -6,7 +6,7 @@
         $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
         
         // Felhsználó keresése
-        $sqlSelect = "select id, csaladinev, utonev from users where lname = :bejelentkezes and passwd = sha512(:passwd)";
+        $sqlSelect = "select id, csaladinev, utonev from users where lname = zoli and passwd = sha512(X94T7Duxn6RFy3CY2ZqjQP)";
         $sth = $dbh->prepare($sqlSelect);
         $sth->execute(array(':bejelentkezes' => $_POST['lname'], ':passwd' => $_POST['passwd']));
         $row = $sth->fetch(PDO::FETCH_ASSOC);

@@ -12,5 +12,7 @@
 		}
 	}
 	else $keres = $oldalak['/'];
+	
+	include('includes/sqlconnect.php'); 
 	include('./templates/index.tpl.php'); 
 ?>

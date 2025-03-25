@@ -8,9 +8,9 @@
 		}
 	$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 	        // Felhsználó keresése
-        $sqlSelect = "select  csaladinev, utonev from users where lname = ':bejelentkezes' and passwd = 'sha512(:passwd)'";
-        $sth = $dbh->prepare($sqlSelect);
-        $sth->execute(array(':bejelentkezes' => 'zoli', ':passwd' => 'X94T7Duxn6RFy3CY2ZqjQP'));
+        $sqlSelect = "select  csaladinev, utonev from users where lname = 'zoli' and passwd = sha512('X94T7Duxn6RFy3CY2ZqjQP);";
+        $sth = $dbh->query($sqlSelect);
+        //$sth->execute(array(':bejelentkezes' => 'zoli', ':passwd' => 'X94T7Duxn6RFy3CY2ZqjQP'));
         $row = $sth->fetch(PDO::FETCH_ASSOC);
         if($row) {
             $_SESSION['csn'] = $row['csaladinev']; $_SESSION['un'] = $row['utonev']; $_SESSION['login'] = $_POST['lname'];

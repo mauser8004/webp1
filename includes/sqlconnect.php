@@ -7,6 +7,15 @@
  				echo mysqli_connect_error();
 		}
 	$result = $mysqli->query("SELECT * FROM users", MYSQLI_USE_RESULT);
+	if($result){
+     // Cycle through results
+    while ($row = $result->fetch_object()){
+        $user_arr[] = $row;
+    }
+    // Free result set
+    $result->close();
+    $db->next_result();
+}
     }
     catch (PDOException $e) {
         $errormessage = "Hiba: ".$e->getMessage();

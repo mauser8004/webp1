@@ -7,19 +7,23 @@ if(isset($_POST['lname']) && isset($_POST['passwd'])) {
         $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
         
         // Felhsználó keresése
-        $sqlSelect = "select id, csaladinev, utonev from users where lnmae = :bejelentkezes and passwd = sha512(:passwd)";
+        $sqlSelect = "select id, csaladinev, utonev from users where lname = :bejelentkezes and passwd = sha512(:passwd)";
         $sth = $dbh->prepare($sqlSelect);
         $sth->execute(array(':bejelentkezes' => $_POST['lname'], ':passwd' => $_POST['passwd']));
         $row = $sth->fetch(PDO::FETCH_ASSOC);
         if($row) {
             $_SESSION['csn'] = $row['csaladinev']; $_SESSION['un'] = $row['utonev']; $_SESSION['login'] = $_POST['lname'];
-        }
+
+	}
+	echo "Sikerült";
     }
     catch (PDOException $e) {
         $errormessage = "Hiba: ".$e->getMessage();
     }      
 }
 else {
-    header("Location: .");
+
+    //header("Location: .");
+	echo "Nem sikerült";
 }
 ?>

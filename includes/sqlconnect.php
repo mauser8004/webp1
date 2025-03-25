@@ -18,6 +18,7 @@
     }
     catch (PDOException $e) {
         $errormessage = "Hiba: ".$e->getMessage();
+	echo "Nem sikerul";
     }      
 
 ?>

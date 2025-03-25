@@ -19,7 +19,6 @@
 	echo "";
         $result->close();
         echo $_SESSION['csn'] = $row['csaladinev']; $_SESSION['un'] = $row['utonev']; $_SESSION['login'] = $_POST['lname'];
-}
     }
     catch (PDOException $e) {
         $errormessage = "Hiba: ".$e->getMessage();

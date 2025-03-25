@@ -14,7 +14,7 @@
     }
     // Free result set
     $result->close();
-    $db->next_result();
+    //$db->next_result();
 }
     }
     catch (PDOException $e) {

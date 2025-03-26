@@ -9,8 +9,9 @@ if(isset($_POST['lname']) && isset($_POST['passwd'])) {
 		}
 	$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 	        // Felhsználó keresése
-	$passwd = hash('sha512', 'X94T7Duxn6RFy3CY2ZqjQP');
-        $sqlSelect = "select  csaladinev, utonev from users where lname = 'zoli' and passwd = '$passwd';";
+	$passwd = hash('sha512', $_POST['passwd']);
+	$username = $_POST['lname'];
+        $sqlSelect = "select  csaladinev, utonev from users where lname = $username and passwd = '$passwd';";
         $sth = $dbh->query($sqlSelect);
         //$sth->execute(array(':bejelentkezes' => 'zoli', ':passwd' => 'X94T7Duxn6RFy3CY2ZqjQP'));
         $row = $sth->fetch_assoc();

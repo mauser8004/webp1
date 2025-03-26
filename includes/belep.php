@@ -18,14 +18,16 @@ if(isset($_POST['lname']) && isset($_POST['passwd'])) {
             $_SESSION['csn'] = $row['csaladinev']; $_SESSION['un'] = $row['utonev']; $_SESSION['login'] = $_POST['lname'];
 
 	}
-	echo "sikerul";
+	
+    header("Location: /");
     }
     catch (PDOException $e) {
         $errormessage = "Hiba: ".$e->getMessage();
-	echo "Nem sikerul";
+    
+    header("Location: /");
     }
 }
 else {
-    header("Location: .");
+    header("Location: /");
 }
 ?>

@@ -18,7 +18,7 @@ $oldalak = array(
 	'kapcsolat' => array('fajl' => 'conntact', 'szoveg' => 'Kapcsolat', 'menun' => array(1,1)),
     'uzenetek' => array('fajl' => 'messages', 'szoveg' => 'Üzenetek', 'menun' => array(1,1)),
     'login' => array('fajl' => 'login', 'szoveg' => 'Belépés', 'menun' => array(1,0)),
-    'kilepes' => array('fajl' => 'login', 'szoveg' => 'Kilépés', 'menun' => array(0,1)),
+    'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés', 'menun' => array(0,1)),
     'regisztral' => array('login' => 'regisztral', 'szoveg' => 'Regisztrál', 'menun' => array(0,0))
 );
 ?>

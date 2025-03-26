@@ -11,7 +11,7 @@ if(isset($_POST['lname']) && isset($_POST['passwd'])) {
 	        // Felhsználó keresése
 	$passwd = hash('sha512', $_POST['passwd']);
 	$username = $_POST['lname'];
-        $sqlSelect = "select  csaladinev, utonev from users where lname = $username and passwd = '$passwd';";
+        $sqlSelect = "select  csaladinev, utonev from users where lname = '$username' and passwd = '$passwd';";
         $sth = $dbh->query($sqlSelect);
         //$sth->execute(array(':bejelentkezes' => 'zoli', ':passwd' => 'X94T7Duxn6RFy3CY2ZqjQP'));
         $row = $sth->fetch_assoc();

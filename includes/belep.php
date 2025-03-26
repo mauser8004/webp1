@@ -16,6 +16,7 @@ if(isset($_POST['lname']) && isset($_POST['passwd'])) {
         //$sth->execute(array(':bejelentkezes' => 'zoli', ':passwd' => 'X94T7Duxn6RFy3CY2ZqjQP'));
         $row = $sth->fetch_assoc();
         if($row) {
+	    session_start();
             $_SESSION['csn'] = $row['csaladinev']; $_SESSION['un'] = $row['utonev']; $_SESSION['login'] = $_POST['lname'];
 
 	}

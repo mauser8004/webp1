@@ -1,5 +1,5 @@
-<?php if(isset($_POST['csaladinev']) && isset($_POST['utonev']) && isset($_POST['lname']) && isset($_POST['passwd']) ) {
-	      echo "Redisztrácios sikeres, kérjük jelentkezzen be!";
+<?php if($GLOBAL[regisztralt] == 1 ) {
+	      echo "Regisztrácios sikeres, kérjük jelentkezzen be!";
 	}
 ?>
 

@@ -14,7 +14,7 @@
         <legend>Regisztráció</legend>
         <br>
         <input type="text" name="csaladinev" placeholder="Vezetéknév" required><br><br>
-        <input type="text" name="utonev" placeholder="Utónév" ><br><br>
+        <input type="text" name="utonev" placeholder="Utónév" required><br><br>
         <input type="text" name="lname" placeholder="Felhasználói név" required><br><br>
         <input type="password" name="passwd" placeholder="Jelszó" required><br><br>
         <input type="submit" name="regisztracio" value="Regisztráció">

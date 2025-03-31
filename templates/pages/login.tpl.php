@@ -59,7 +59,7 @@
                 return false;
             }
 
-            alert("Sikeres regisztráció!");
-            document.forms["regForm"].submit(); // Ha minden jó, az űrlapot elküldi
+            //alert("Sikeres regisztráció!");
+            //document.forms["regForm"].submit(); // Ha minden jó, az űrlapot elküldi
         }
     </script>

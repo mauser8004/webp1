@@ -17,8 +17,8 @@ if(isset($_POST['csaladinev']) && isset($_POST['utonev']) && isset($_POST['lname
         $sqlSelect = "insert into users (csaladinev, utonev, lname, passwd) values ('$csaladinev', '$utonev', '$username','$passwd');";
         $sth = $dbh->query($sqlSelect);
 
-    	echo "Regisztráció sikeres";
-    	header("Location: /");
+    	//echo "Regisztráció sikeres";
+    	header("Location: /login");
 	}
 	
     catch (PDOException $e) {

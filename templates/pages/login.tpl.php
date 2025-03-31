@@ -9,7 +9,7 @@
       </fieldset>
     </form>
     <h3>Regisztrálja magát, ha még nem felhasználó!</h2>
-    <form action = "regisztral" method = "POST">
+    <form action = "/includes/regisztral,php" method = "POST">
       <fieldset>
         <legend>Regisztráció</legend>
         <br>

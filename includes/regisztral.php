@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['csaladinev']) && isset($_POST['utonev'] && isset($_POST[lname] && isset($_POST[passwd])))) {
+if(isset($_POST['csaladinev']) && isset($_POST['utonev']) && isset($_POST['lname']) && isset($_POST['passwd']) ) {
     try {
         // Kapcsolódás
 	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);

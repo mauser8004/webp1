@@ -20,4 +20,5 @@ $oldalak = array(
     'login' => array('fajl' => 'login', 'szoveg' => 'Belépés/Regisztráció', 'menun' => array(1,0)),
     'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés', 'menun' => array(0,1)),
 );
+$regisztralt = 0;
 ?>

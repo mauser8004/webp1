@@ -23,65 +23,54 @@
     </form>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('fieldset');
+  const regForm = document.querySelector('form[action="/includes/regisztral.php"]');
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Megállítjuk az alapértelmezett űrlapküldést
+  regForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
     // Mezők kinyerése
-    const vezeteknev = document.querySelector('input[name="csaladinev"]').value.trim();
-    const utonev = document.querySelector('input[name="utonev"]').value.trim();
-    const felhasznalonev = document.querySelector('input[name="lname"]').value.trim();
-    const jelszo = document.querySelector('input[name="passwd"]').value.trim();
+    const vezeteknev = regForm.querySelector('input[name="csaladinev"]').value.trim();
+    const utonev = regForm.querySelector('input[name="utonev"]').value.trim();
+    const felhasznalonev = regForm.querySelector('input[name="lname"]').value.trim();
+    const jelszo = regForm.querySelector('input[name="passwd"]').value.trim();
 
     // Validálás
     let isValid = true;
     let errorMessage = "";
 
-    // Vezetéknév: min 3 karakter, nagybetűvel kezdődik
     if (vezeteknev.length < 3 || !/^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(vezeteknev)) {
       errorMessage += "- A vezetéknév minimum 3 karakteres és nagybetűvel kezdődik!\n";
       isValid = false;
     }
 
-    // Utónév: min 3 karakter, nagybetűvel kezdődik
     if (utonev.length < 3 || !/^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(utonev)) {
       errorMessage += "- Az utónév minimum 3 karakteres és nagybetűvel kezdődik!\n";
       isValid = false;
     }
 
-    // Felhasználónév: nem lehet üres
     if (felhasznalonev === "") {
       errorMessage += "- A felhasználónév megadása kötelező!\n";
       isValid = false;
     }
 
-    // Jelszó: 8-20 karakter
     if (jelszo.length < 8 || jelszo.length > 20) {
       errorMessage += "- A jelszó 8 és 20 karakter között kell legyen!\n";
       isValid = false;
     }
 
-    // Ha hibás, hibaüzenet; ha jó, elküldjük POST-tal
     if (!isValid) {
       alert("Hibás adatok:\n" + errorMessage);
     } else {
-      // Adatok összeállítása POST-hoz
-      const formData = new FormData();
-      formData.append('csaladinev', vezeteknev);
-      formData.append('utonev', utonev);
-      formData.append('lname', felhasznalonev);
-      formData.append('passwd', jelszo);
+      const formData = new FormData(regForm); // Az egész űrlap adatait elküldjük
 
-      // Fetch API-val POST kérés a regisztracio.php-hoz
-      fetch('regisztracio.php', {
+      fetch('/includes/regisztral.php', {
         method: 'POST',
         body: formData
       })
       .then(response => response.text())
       .then(data => {
         alert("Sikeres regisztráció! Szerver válasza: " + data);
-        form.reset(); // Űrlap törlése
+        regForm.reset();
       })
       .catch(error => {
         alert("Hiba történt a küldés során: " + error);

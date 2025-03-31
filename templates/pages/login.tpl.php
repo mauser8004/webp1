@@ -1,4 +1,4 @@
-<?php if($GLOBAL[regisztralt] == 1 ) {
+<?php if($GLOBAL["regisztralt"] == 1 ) {
 	      echo "Regisztrácios sikeres, kérjük jelentkezzen be!";
 	}
 ?>

@@ -9,7 +9,6 @@
       </fieldset>
     </form>
     <h3>Regisztrálja magát, ha még nem felhasználó!</h2>
-    <form name="regForm" onsubmit="return validateForm(event)">
     <form action = "/includes/regisztral.php" method = "POST">
       <fieldset>
         <legend>Regisztráció</legend>
@@ -22,44 +21,39 @@
         <br>&nbsp;
       </fieldset>
     </form>
-</form>
-    <script>
-        function validateForm(event) {
-            event.preventDefault(); // Megakadályozza az űrlap elküldését, ha hibák vannak
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("form").addEventListener("submit", function (event) {
+            let csaladinev = document.querySelector("[name='csaladinev']").value.trim();
+            let utonev = document.querySelector("[name='utonev']").value.trim();
+            let lname = document.querySelector("[name='lname']").value.trim();
+            let passwd = document.querySelector("[name='passwd']").value.trim();
+            let errorMsg = [];
 
-            let csaladinev = document.forms["regForm"]["csaladinev"].value;
-            let utonev = document.forms["regForm"]["utonev"].value;
-            let lname = document.forms["regForm"]["lname"].value;
-            let passwd = document.forms["regForm"]["passwd"].value;
-
-            let errorMsg = "";
-
-            // Vezetéknév és utónév ellenőrzése
+            // Vezetéknév és utónév ellenőrzése (Nagybetűvel kezdődjön, min. 3 karakter)
             let nameRegex = /^[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]{2,}$/;
             if (!nameRegex.test(csaladinev)) {
-                errorMsg += "A vezetéknév nagybetűvel kell kezdődjön és legalább 3 karakter hosszú legyen!\n";
+                errorMsg.push("A vezetéknév nagybetűvel kell kezdődjön és legalább 3 karakter hosszú legyen!");
             }
             if (!nameRegex.test(utonev)) {
-                errorMsg += "Az utónév nagybetűvel kell kezdődjön és legalább 3 karakter hosszú legyen!\n";
+                errorMsg.push("Az utónév nagybetűvel kell kezdődjön és legalább 3 karakter hosszú legyen!");
             }
 
-            // Felhasználónév ellenőrzése
-            if (lname.trim() === "") {
-                errorMsg += "A felhasználónév nem lehet üres!\n";
+            // Felhasználónév ellenőrzése (nem lehet üres)
+            if (lname.length === 0) {
+                errorMsg.push("A felhasználónév nem lehet üres!");
             }
 
-            // Jelszó ellenőrzése
+            // Jelszó ellenőrzése (min. 8, max. 20 karakter)
             if (passwd.length < 8 || passwd.length > 20) {
-                errorMsg += "A jelszónak 8 és 20 karakter között kell lennie!\n";
+                errorMsg.push("A jelszónak 8 és 20 karakter között kell lennie!");
             }
 
             // Hibaüzenetek megjelenítése
-            if (errorMsg !== "") {
-                alert(errorMsg);
-                return false;
+            if (errorMsg.length > 0) {
+                alert(errorMsg.join("\n"));
+                event.preventDefault(); // Megakadályozza az űrlap elküldését, ha hiba van
             }
-
-            //alert("Sikeres regisztráció!");
-            //document.forms["regForm"].submit(); // Ha minden jó, az űrlapot elküldi
-        }
-    </script>
+        });
+    });
+</script>

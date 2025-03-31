@@ -29,78 +29,39 @@
 </form>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Mezők és hibakijelzők kiválasztása
-  const csaladinevInput = document.querySelector('input[name="csaladinev"]');
-  const utonevInput = document.querySelector('input[name="utonev"]');
-  const lnameInput = document.querySelector('input[name="lname"]');
-  const passwdInput = document.querySelector('input[name="passwd"]');
-
-  // Eseményfigyelők hozzáadása (amikor elhagyja a mezőt)
-  csaladinevInput.addEventListener('blur', validateCsaladinev);
-  utonevInput.addEventListener('blur', validateUtonev);
-  lnameInput.addEventListener('blur', validateLname);
-  passwdInput.addEventListener('blur', validatePasswd);
-
-  // Validáló függvények
-  function validateCsaladinev() {
-    const value = csaladinevInput.value.trim();
-    const errorElement = document.getElementById('csaladinev-error');
-
+  // Vezetéknév validálása
+  document.querySelector('input[name="csaladinev"]').addEventListener('blur', function() {
+    const value = this.value.trim();
     if (value.length < 3 || !/^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(value)) {
-      errorElement.textContent = 'Minimum 3 karakter, nagybetűvel kezdődik!';
-      return false;
-    } else {
-      errorElement.textContent = '';
-      return true;
+      alert('A vezetéknév minimum 3 karakteres és nagybetűvel kezdődik!');
+      this.focus();
     }
-  }
+  });
 
-  function validateUtonev() {
-    const value = utonevInput.value.trim();
-    const errorElement = document.getElementById('utonev-error');
-
+  // Utónév validálása
+  document.querySelector('input[name="utonev"]').addEventListener('blur', function() {
+    const value = this.value.trim();
     if (value.length < 3 || !/^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(value)) {
-      errorElement.textContent = 'Minimum 3 karakter, nagybetűvel kezdődik!';
-      return false;
-    } else {
-      errorElement.textContent = '';
-      return true;
+      alert('Az utónév minimum 3 karakteres és nagybetűvel kezdődik!');
+      this.focus();
     }
-  }
+  });
 
-  function validateLname() {
-    const value = lnameInput.value.trim();
-    const errorElement = document.getElementById('lname-error');
-
-    if (value.length === 0) {
-      errorElement.textContent = 'Kötelező mező!';
-      return false;
-    } else {
-      errorElement.textContent = '';
-      return true;
+  // Felhasználónév validálása
+  document.querySelector('input[name="lname"]').addEventListener('blur', function() {
+    if (this.value.trim() === "") {
+      alert('A felhasználónév megadása kötelező!');
+      this.focus();
     }
-  }
+  });
 
-  function validatePasswd() {
-    const value = passwdInput.value.trim();
-    const errorElement = document.getElementById('passwd-error');
-
+  // Jelszó validálása - JAVÍTOTT változat
+  document.querySelector('input[name="passwd"]').addEventListener('blur', function() {
+    const value = this.value.trim();
     if (value.length < 8 || value.length > 20) {
-      errorElement.textContent = '8-20 karakter között kell legyen!';
-      return false;
-    } else {
-      errorElement.textContent = '';
-      return true;
+      alert('A jelszó 8 és 20 karakter között kell legyen!');
+      this.focus();
     }
-  }
-
-  // Űrlap elküldése előtti utolsó ellenőrzés
-  document.querySelector('form').addEventListener('submit', function(event) {
-    if (!validateCsaladinev() || !validateUtonev() || !validateLname() || !validatePasswd()) {
-      event.preventDefault(); // Megakadályozza az űrlap küldését
-      alert('Kérjük, javítsa ki a hibákat!');
-    }
-    // Ha minden valid, az űrlap elküldődik a szerverre
   });
 });
 </script>

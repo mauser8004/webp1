@@ -19,7 +19,6 @@ if(isset($_POST['csaladinev']) && isset($_POST['utonev']) && isset($_POST['lname
 
 	}
 	
-    header("Location: /login");
     }
     catch (PDOException $e) {
         $errormessage = "Hiba: ".$e->getMessage();

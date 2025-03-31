@@ -9,73 +9,98 @@
       </fieldset>
     </form>
     <h3>Regisztrálja magát, ha még nem felhasználó!</h2>
-    <form action = "/includes/regisztral.php" method = "POST">
-      <fieldset>
-        <legend>Regisztráció</legend>
-        <br>
-        <input type="text" name="csaladinev" placeholder="Vezetéknév" required><br><br>
-        <input type="text" name="utonev" placeholder="Utónév" required><br><br>
-        <input type="text" name="lname" placeholder="Felhasználói név" required><br><br>
-        <input type="password" name="passwd" placeholder="Jelszó" required><br><br>
-        <input type="submit" name="regisztracio" value="Regisztráció">
-        <br>&nbsp;
-      </fieldset>
-    </form>
+<form action="/includes/regisztral.php" method="POST">
+  <fieldset>
+    <legend>Regisztráció</legend>
+    <input type="text" name="csaladinev" placeholder="Vezetéknév" required>
+    <span id="csaladinev-error" class="error"></span><br><br>
+
+    <input type="text" name="utonev" placeholder="Utónév" required>
+    <span id="utonev-error" class="error"></span><br><br>
+
+    <input type="text" name="lname" placeholder="Felhasználói név" required>
+    <span id="lname-error" class="error"></span><br><br>
+
+    <input type="password" name="passwd" placeholder="Jelszó" required>
+    <span id="passwd-error" class="error"></span><br><br>
+
+    <input type="submit" name="regisztracio" value="Regisztráció">
+  </fieldset>
+</form>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const regForm = document.querySelector('form[action="/includes/regisztral.php"]');
+  // Mezők és hibakijelzők kiválasztása
+  const csaladinevInput = document.querySelector('input[name="csaladinev"]');
+  const utonevInput = document.querySelector('input[name="utonev"]');
+  const lnameInput = document.querySelector('input[name="lname"]');
+  const passwdInput = document.querySelector('input[name="passwd"]');
 
-  regForm.addEventListener('submit', function(event) {
-    event.preventDefault();
+  // Eseményfigyelők hozzáadása (amikor elhagyja a mezőt)
+  csaladinevInput.addEventListener('blur', validateCsaladinev);
+  utonevInput.addEventListener('blur', validateUtonev);
+  lnameInput.addEventListener('blur', validateLname);
+  passwdInput.addEventListener('blur', validatePasswd);
 
-    // Mezők kinyerése
-    const vezeteknev = regForm.querySelector('input[name="csaladinev"]').value.trim();
-    const utonev = regForm.querySelector('input[name="utonev"]').value.trim();
-    const felhasznalonev = regForm.querySelector('input[name="lname"]').value.trim();
-    const jelszo = regForm.querySelector('input[name="passwd"]').value.trim();
+  // Validáló függvények
+  function validateCsaladinev() {
+    const value = csaladinevInput.value.trim();
+    const errorElement = document.getElementById('csaladinev-error');
 
-    // Validálás
-    let isValid = true;
-    let errorMessage = "";
-
-    if (vezeteknev.length < 3 || !/^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(vezeteknev)) {
-      errorMessage += "- A vezetéknév minimum 3 karakteres és nagybetűvel kezdődik!\n";
-      isValid = false;
-    }
-
-    if (utonev.length < 3 || !/^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(utonev)) {
-      errorMessage += "- Az utónév minimum 3 karakteres és nagybetűvel kezdődik!\n";
-      isValid = false;
-    }
-
-    if (felhasznalonev === "") {
-      errorMessage += "- A felhasználónév megadása kötelező!\n";
-      isValid = false;
-    }
-
-    if (jelszo.length < 8 || jelszo.length > 20) {
-      errorMessage += "- A jelszó 8 és 20 karakter között kell legyen!\n";
-      isValid = false;
-    }
-
-    if (!isValid) {
-      alert("Hibás adatok:\n" + errorMessage);
+    if (value.length < 3 || !/^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(value)) {
+      errorElement.textContent = 'Minimum 3 karakter, nagybetűvel kezdődik!';
+      return false;
     } else {
-      const formData = new FormData(regForm); // Az egész űrlap adatait elküldjük
-
-      fetch('/includes/regisztral.php', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.text())
-      .then(data => {
-        alert("Sikeres regisztráció! Szerver válasza: " + data);
-        regForm.reset();
-      })
-      .catch(error => {
-        alert("Hiba történt a küldés során: " + error);
-      });
+      errorElement.textContent = '';
+      return true;
     }
+  }
+
+  function validateUtonev() {
+    const value = utonevInput.value.trim();
+    const errorElement = document.getElementById('utonev-error');
+
+    if (value.length < 3 || !/^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(value)) {
+      errorElement.textContent = 'Minimum 3 karakter, nagybetűvel kezdődik!';
+      return false;
+    } else {
+      errorElement.textContent = '';
+      return true;
+    }
+  }
+
+  function validateLname() {
+    const value = lnameInput.value.trim();
+    const errorElement = document.getElementById('lname-error');
+
+    if (value.length === 0) {
+      errorElement.textContent = 'Kötelező mező!';
+      return false;
+    } else {
+      errorElement.textContent = '';
+      return true;
+    }
+  }
+
+  function validatePasswd() {
+    const value = passwdInput.value.trim();
+    const errorElement = document.getElementById('passwd-error');
+
+    if (value.length < 8 || value.length > 20) {
+      errorElement.textContent = '8-20 karakter között kell legyen!';
+      return false;
+    } else {
+      errorElement.textContent = '';
+      return true;
+    }
+  }
+
+  // Űrlap elküldése előtti utolsó ellenőrzés
+  document.querySelector('form').addEventListener('submit', function(event) {
+    if (!validateCsaladinev() || !validateUtonev() || !validateLname() || !validatePasswd()) {
+      event.preventDefault(); // Megakadályozza az űrlap küldését
+      alert('Kérjük, javítsa ki a hibákat!');
+    }
+    // Ha minden valid, az űrlap elküldődik a szerverre
   });
 });
 </script>

@@ -16,22 +16,15 @@ if(isset($_POST['csaladinev']) && isset($_POST['utonev']) && isset($_POST['lname
         //$sqlSelect = "select  csaladinev, utonev from users where lname = '$username' and passwd = '$passwd';";
         $sqlSelect = "insert into users (csaladinev, utonev, lname, passwd) values ('$csaladinev', '$utonev', '$username','$passwd');";
         $sth = $dbh->query($sqlSelect);
-        //$sth->execute(array(':bejelentkezes' => 'zoli', ':passwd' => 'X94T7Duxn6RFy3CY2ZqjQP'));
-        $sqlSelect2 = "select  csaladinev, utonev from users where lname = '$username' and passwd = '$passwd';";
-        $sth = $dbh->query($sqlSelect22);
-        $row = $sth->fetch_assoc();
-        if($row) {
-	    session_start();
-            $_SESSION['csn'] = $row['csaladinev']; $_SESSION['un'] = $row['utonev']; $_SESSION['login'] = $_POST['lname'];
 
 	}
 	
-    header("Location: /");
+    header("Location: /login");
     }
     catch (PDOException $e) {
         $errormessage = "Hiba: ".$e->getMessage();
     
-    header("Location: /");
+    header("Location: /login");
     }
 }
 else {

@@ -20,7 +20,7 @@ if(isset($_POST['csaladinev']) && isset($_POST['utonev']) && isset($_POST['lname
 	
 	
 	
-	$sqlSelect0 = "select id from users where lname = '$username'";
+	$sqlSelect0 = "select lname from users where lname = '$username'";
         $sth = $dbh->query($sqlSelect0);
 	if ($sth->num_rows = 0) {
 	

@@ -1,0 +1,18 @@
+<?php
+$comment =  "";
+
+if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+  header("Location: /conntact");
+}
+
+?>
+

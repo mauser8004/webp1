@@ -1,7 +1,3 @@
-<?php if($GLOBAL["regisztralt"] == 1 ) {
-	      echo "Regisztrácios sikeres, kérjük jelentkezzen be!";
-	}
-?>
 
     <form action = "/includes/belep.php" method = "POST">
       <fieldset>
@@ -61,12 +57,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Jelszó validálása - JAVÍTOTT változat
-  document.querySelector('input[name="passwd"]').addEventListener('blur', function() {
-    const value = this.value.trim();
-    if (value.length < 8 || value.length > 20) {
-      alert('A jelszó 8 és 20 karakter között kell legyen!');
-      this.focus();
-    }
-  });
+  //document.querySelector('input[name="passwd"]').addEventListener('blur', function() {
+  //  const value = this.value.trim();
+  //  if (value.length < 8 || value.length > 20) {
+  //    alert('A jelszó 8 és 20 karakter között kell legyen!');
+  //    this.focus();
+  //  }
+  // });
 });
 </script>

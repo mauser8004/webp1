@@ -17,7 +17,7 @@ header("Location: /conntact");
 ?>
 <div>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form method="post" action="/templates/pages/conntact.tpl.php">
  <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
   <input type="submit" name="submit" value="Küldés">  
 </form>

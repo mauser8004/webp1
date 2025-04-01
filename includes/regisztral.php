@@ -7,18 +7,35 @@ if(isset($_POST['csaladinev']) && isset($_POST['utonev']) && isset($_POST['lname
 	if(mysqli_connect_errno()){
  				echo mysqli_connect_error();
 		}
+
 	$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
-	        // Felhsználó keresése
+	
+
+
+	// Felhsználó keresése
 	$csaladinev = $_POST['csaladinev'];
 	$utonev = $_POST['utonev'];
 	$passwd = hash('sha512', $_POST['passwd']);
 	$username = $_POST['lname'];
-        //$sqlSelect = "select  csaladinev, utonev from users where lname = '$username' and passwd = '$passwd';";
+	
+	
+	
+	$sqlSelect0 = "select id from users where lname = '$username'";
+        $sth = $dbh->query($sqlSelect0);
+	if ($sth->num_rows = 0) {
+	
+	//$sqlSelect = "select  csaladinev, utonev from users where lname = '$username' and passwd = '$passwd';";
         $sqlSelect = "insert into users (csaladinev, utonev, lname, passwd) values ('$csaladinev', '$utonev', '$username','$passwd');";
         $sth = $dbh->query($sqlSelect);
 	$regisztralt = 1;
-    	//echo "Regisztráció sikeres";
-    	header("Location: /login");
+    	echo "Regisztráció sikeres";
+	header("Location: /login");
+	}
+	else{
+	
+	echo "Létezik a felhasználóinev";
+	}
+
 	}
 	
     catch (PDOException $e) {

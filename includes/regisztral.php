@@ -22,11 +22,11 @@ if(isset($_POST['csaladinev']) && isset($_POST['utonev']) && isset($_POST['lname
 	
 	$sqlSelect0 = "select id from users where lname = '$username'";
         $sth = $dbh->query($sqlSelect0);
-	if ($sth->num_rows > 0) {
+	if ($sth->num_rows = 0) {
 	
 	//$sqlSelect = "select  csaladinev, utonev from users where lname = '$username' and passwd = '$passwd';";
-        $sqlSelect = "insert into users (csaladinev, utonev, lname, passwd) values ('$csaladinev', '$utonev', '$username','$passwd');";
-        $sth = $dbh->query($sqlSelect);
+        $sqlSelect1 = "insert into users (csaladinev, utonev, lname, passwd) values ('$csaladinev', '$utonev', '$username','$passwd');";
+        $sth = $dbh->query($sqlSelect1);
 	$regisztralt = 1;
     	echo "Regisztráció sikeres";
 	header("Location: /login");

@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Felhasználónév validálása
   document.querySelector('input[name="lname"]').addEventListener('blur', function() {
-    if (this.value.trim() === "") {
+    if (this.value.trim() === "" || value.lenght < 3) {
       alert('A felhasználónév megadása kötelező!');
       this.focus();
     }

@@ -25,6 +25,7 @@ function test_input($data) {
 </div>
 
 <?php
+header("Location: /conntact");
 echo "<h2>Your Input:</h2>";
 echo "<br>";
 echo $comment;

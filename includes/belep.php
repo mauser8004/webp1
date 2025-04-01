@@ -22,11 +22,7 @@ if (isset($_POST['lname'], $_POST['passwd'])) {
         $row = $result->fetch_assoc();
         
         if ($row) {
-            //session_start();
-	    session_start([
-		    'cookie_lifetime' => 86400,
-    		    'read_and_close'  => true,
-		]);
+            session_start();
             $_SESSION['csn'] = $row['csaladinev'];
             $_SESSION['un'] = $row['utonev'];
             $_SESSION['login'] = $username;

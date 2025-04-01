@@ -10,7 +10,8 @@ function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
-  header("Location: /conntact");
+  header("Location: {$_SERVER['HTTP_REFERER']}");
+  exit;
 }
 
 ?>

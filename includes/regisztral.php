@@ -24,11 +24,14 @@ if (isset($_POST['csaladinev'], $_POST['utonev'], $_POST['lname'], $_POST['passw
             $insertQuery->bind_param("ssss", $csaladinev, $utonev, $username, $passwd);
             $insertQuery->execute();
 
-            echo "Regisztráció sikeres!";
+            $uzenet = "Regisztráció sikeres!";
+
+	    $ujra = false;
             // header("Location: /login"); // Átirányítás, ha kell
             // exit();
         } else {
-            echo "A felhasználónév már foglalt!";
+            $uzenet ="A felhasználónév már foglalt!";
+	    $ujra = true;
         }
 
         $checkQuery->close();
@@ -41,3 +44,24 @@ if (isset($_POST['csaladinev'], $_POST['utonev'], $_POST['lname'], $_POST['passw
     // exit();
 }
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Regisztráció</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <?php if(isset($uzenet)) { ?>
+            <h1><?= $uzenet ?></h1>
+            <?php if($ujra) { ?>
+                <a href="/login">Próbálja újra!</a>
+	    <?php
+		}
+		else { ?>
+	        
+		
+                <a href="/login">Kérjük jelentkezzen be!</a>
+
+        <?php } } ?>
+    </body>
+</html>

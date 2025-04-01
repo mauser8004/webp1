@@ -11,6 +11,7 @@ function test_input($data) {
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
+header("Location: /conntact");
 }
 
 ?>
@@ -25,7 +26,6 @@ function test_input($data) {
 </div>
 
 <?php
-header("Location: /conntact");
 echo "<h2>Your Input:</h2>";
 echo "<br>";
 echo $comment;

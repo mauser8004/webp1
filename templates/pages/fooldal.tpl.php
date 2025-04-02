@@ -8,7 +8,10 @@
         <img src="./images/arduino-board.jpg" alt="Arduino UNO tábla" class="float-right">
     </section>
            <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZLcKTGI_xHY?si=kzQ7SYlgeWYyLyP1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ <video width="320" height="240" controls>
+  <source src="/images/arduino.webm" type="video/webm">
+Your browser does not support the video tag.
+</video>
         </div>
     <section class="advantages">
         <h2>Előnyök</h2>

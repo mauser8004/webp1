@@ -1,0 +1,137 @@
+/* Általános stílusok */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f5f5f5;
+}
+
+/* Fejléc stílusok */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    position: relative;
+    display: grid;
+    grid-template-areas: 
+        "image text"
+        "nav nav";
+    gap: 1rem;
+}
+
+.header-image {
+    grid-area: image;
+    max-height: 100px;
+    border-radius: 4px;
+}
+
+.header-text {
+    grid-area: text;
+    align-self: center;
+}
+
+.user-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.9rem;
+}
+
+/* Fő navigáció */
+.main-nav {
+    grid-area: nav;
+    background-color: var(--dark-color);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.main-nav li {
+    margin: 0 10px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.main-nav a:hover {
+    background-color: var(--secondary-color);
+}
+
+.main-nav .active a {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Tartalom */
+main {
+    padding: 2rem;
+    min-height: calc(100vh - 200px);
+}
+
+/* Lábléc */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Kártyák */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Reszponzív média lekérdezések */
+@media (max-width: 768px) {
+    header {
+        grid-template-areas: 
+            "image text"
+            "nav nav";
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main-nav li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .user-info {
+        position: static;
+        text-align: right;
+        grid-column: 1 / -1;
+    }
+}

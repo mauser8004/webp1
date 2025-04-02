@@ -52,19 +52,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Felhasználónév validálása
   document.querySelector('input[name="lname"]').addEventListener('blur', function() {
+    const value = this.value.trim();
     if (this.value.trim() === "" || value.lenght < 3) {
-      alert('A felhasználónév megadása kötelező!');
+      alert('A felhasználónév megadása kötelező! Min 3 karakter!');
       this.focus();
     }
   });
 
   // Jelszó validálása - JAVÍTOTT változat
-  //document.querySelector('input[name="passwd"]').addEventListener('blur', function() {
-  //  const value = this.value.trim();
-  //  if (value.length < 8 || value.length > 20) {
-  //    alert('A jelszó 8 és 20 karakter között kell legyen!');
-  //    this.focus();
-  //  }
-  // });
+  document.querySelector('input[name="passwd"]').addEventListener('blur', function() {
+    const value = this.value.trim();
+    if (value.length < 8 || value.length > 20) {
+      alert('A jelszó 8 és 20 karakter között kell legyen!');
+      this.focus();
+    }
+   });
 });
 </script>

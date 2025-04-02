@@ -14,7 +14,7 @@
                 <label for="login-password" class="form-label">Jelszó</label>
                 <input type="password" id="login-password" name="passwd" class="form-input" 
                        placeholder="Add meg a jelszavad" required
-                       minlength="8">
+                       minlength="2">
             </div>
             
             <button type="submit" name="belepes" class="auth-button">Belépés</button>

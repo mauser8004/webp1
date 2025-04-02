@@ -31,6 +31,8 @@ function test_input($data) {
         $insertQuery->bind_param("ss", $sender, $data);
         $insertQuery->execute();
 
+  header("Location: {$_SERVER['HTTP_REFERER']}");
+  exit;
 	}
    
      catch (mysqli_sql_exception $e) {

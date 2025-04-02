@@ -16,7 +16,6 @@ function test_input($data) {
         $dbh = new mysqli("localhost", "webp1db", "J3grvN7YjfVtBGwD2RxzdS", "webp1db");
 	$dbh->set_charset("utf8");
 
-        $mysqltime = date ('Y-m-d H:i:s', $phptime);
 	if(! isset($_SESSION['login']) {
 	$sender = "Vendég";
 	}
@@ -25,12 +24,12 @@ function test_input($data) {
 	$sender = $_SESSION['login'];
 	}
 
-        $insertQuery = $dbh->prepare("INSERT INTO users (csaladinev, utonev, lname, passwd) VALUES (?, ?, ?, ?);");
-        $insertQuery->bind_param("ssss", $csaladinev, $utonev, $username, $passwd);
+        $insertQuery = $dbh->prepare("INSERT INTO users (date, sender, mess) VALUES (NOW(), ?, ?,);");
+        $insertQuery->bind_param("ssss", $sender, $data);
         $insertQuery->execute();
 
 
-
+	}
 
 
 

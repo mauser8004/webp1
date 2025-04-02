@@ -1,0 +1,66 @@
+/* 1. FEJLÉC BEÁLLÍTÁSAI */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 2. BEJELENTKEZETT FELHASZNÁLÓ BALRA (ÚJ) */
+.user-info {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 14px;
+    z-index: 10;
+}
+
+/* 3. VÍZSZINTES MENÜ (ÚJ) */
+#nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #34495e;
+    padding: 10px 0;
+}
+
+#nav li {
+    margin: 0 15px;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+
+#nav .active a {
+    background: #3498db;
+}
+
+/* 4. KÉPGALÉRIA EGYSÉGES MÉRET (ÚJ) */
+.image-gallery img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+/* 5. RESZPONZÍV (ÚJ) */
+@media (max-width: 768px) {
+    #nav ul {
+        flex-direction: column;
+    }
+    #nav li {
+        margin: 5px 0;
+    }
+    .user-info {
+        position: static;
+        margin-bottom: 10px;
+    }
+}

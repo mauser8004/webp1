@@ -1,4 +1,4 @@
-<div class="message-container">
+<div class="message-box">
     <h3>Üzenetek</h3>
     
     <?php
@@ -14,16 +14,16 @@
                 $shortened = (strlen($message) > 50) ? substr($message, 0, 50) . '...' : $message;
                 echo '
                 <div class="message-item">
-                    <strong>' . htmlspecialchars($row['sender']) . '</strong>
-                    <small>' . $row['date'] . '</small>
-                    <p>' . $shortened . '</p>
+                    <span class="message-sender">' . htmlspecialchars($row['sender']) . '</span>
+                    <span class="message-date">' . $row['date'] . '</span><br>
+                    ' . $shortened . '
                 </div>';
             }
         } else {
-            echo '<div class="empty-message">Még nincsenek üzenetek</div>';
+            echo '<p class="no-messages">Még nincsenek üzenetek</p>';
         }
     } catch (mysqli_sql_exception $e) {
-        echo '<div class="error">Hiba az üzenetek betöltésekor: ' . $e->getMessage() . '</div>';
+        echo '<p class="error-message">Hiba az üzenetek betöltésekor</p>';
     }
     ?>
 </div>

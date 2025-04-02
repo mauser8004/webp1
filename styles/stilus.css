@@ -241,3 +241,43 @@ header {
 .auth-form input[type="submit"]:hover {
     background: #2980b9;
 }
+/*ÜZENETEk*/
+/* ÜZENETEK STÍLUSAI (ÚJ SZABÁLYOK) */
+.message-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+}
+
+.message-box h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.message-item {
+    padding: 8px;
+    border-bottom: 1px dashed #eee;
+    margin-bottom: 8px;
+}
+
+.message-sender {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.message-date {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.no-messages {
+    color: #668;
+}
+
+.error-message {
+    color: red;
+}

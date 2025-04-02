@@ -19,7 +19,7 @@ function test_input($data) {
         $dbh = new mysqli("localhost", "webp1db", "J3grvN7YjfVtBGwD2RxzdS", "webp1db");
 	$dbh->set_charset("utf8");
 
-	if(! isset($_SESSION['login']) {
+	if(! isset($_SESSION['login'])) {
 	$sender = "Vendég";
 	}
 	

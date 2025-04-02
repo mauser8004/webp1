@@ -147,6 +147,7 @@ header {
     border-radius: 5px;
     border: 1px solid #ddd;
     margin: 20px 0;
+    align-items: center;
 }
 
 .contact-form textarea {
@@ -155,6 +156,7 @@ header {
     border: 1px solid #ddd;
     border-radius: 4px;
     resize: vertical;
+    align-items: center;
 }
 
 /* RESZPONZÍV */

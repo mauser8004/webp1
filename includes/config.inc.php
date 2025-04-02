@@ -17,7 +17,7 @@ $oldalak = array(
 	'kepek' => array('fajl' => 'gallery', 'szoveg' => 'Képek', 'menun' => array(1,1)),
 	'kapcsolat' => array('fajl' => 'conntact', 'szoveg' => 'Kapcsolat', 'menun' => array(1,1)),
     'uzenetek' => array('fajl' => 'messages', 'szoveg' => 'Üzenetek', 'menun' => array(0,1)),
-    'login' => array('fajl' => 'login', 'szoveg' => 'Belépés/Regisztráció', 'menun' => array(1,0)),
+    'login' => array('fajl' => 'login', 'szoveg' => 'Belépés', 'menun' => array(1,0)),
     'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés', 'menun' => array(0,1)),
 );
 $regisztralt = 0;

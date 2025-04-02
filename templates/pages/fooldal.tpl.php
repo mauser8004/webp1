@@ -5,10 +5,9 @@
         <h2>Bevezetés</h2>
         <p>Az Arduino egy nyílt forráskódú elektronikai fejlesztői platform, amely könnyen használható hardverből (mikrokontroller alapú fejlesztői táblák) és szoftverből (Arduino IDE) áll. 2005-ben olasz fejlesztők alkották meg, és azóta világszerte elterjedt a robotika, otthonautomatizálás és egyéb elektronikai projektek területén.</p>
         
-        <img src="./images/arduino-board.jpg" alt="Arduino UNO tábla" class="float-right">
     </section>
            <div class="video-container">
- <video width="320" height="240" controls>
+ <video width="680" height="420" controls>
   <source src="/images/arduino.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>

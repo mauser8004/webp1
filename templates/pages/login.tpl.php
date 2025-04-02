@@ -19,10 +19,10 @@
                 <input type="text" name="utonev" placeholder="Utónév" required>
                 <span id="utonev-error" class="error"></span>
                 
-                <input type="text" name="loginname" placeholder="Felhasználói név" required>
+                <input type="text" name="loginname" placeholder="Felhasználói név : min 3 karakter" required>
                 <span id="lname-error" class="error"></span>
                 
-                <input type="password" name="password" placeholder="Jelszó" required>
+                <input type="password" name="password" placeholder="Jelszó min: 8 karakter" required>
                 <span id="passwd-error" class="error"></span>
                 
                 <input type="submit" name="regisztracio" value="Regisztráció">

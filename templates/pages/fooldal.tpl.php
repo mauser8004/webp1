@@ -9,7 +9,7 @@
     </section>
            <div class="video-container">
  <video width="320" height="240" controls>
-  <source src="/images/arduino.webm" type="video/webm">
+  <source src="/images/arduino.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
         </div>

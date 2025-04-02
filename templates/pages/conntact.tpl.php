@@ -4,13 +4,16 @@
  <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
   <input type="submit" name="submit" value="Küldés">  
 </form>
-
+<script>
+document.querySelector('form').addEventListener('submit', function(e) {
+  const value = document.querySelector('textarea[name="comment"]').value.trim();
+  if (value.length === 0) {
+    e.preventDefault(); // megakadályozza az űrlap elküldését
+    alert('Az üzenet nem maradhat üres');
+    document.querySelector('textarea[name="comment"]').focus();
+  }
+});
+</script>
 
 </div>
 
-<?php
-echo "<h2>Your Input:</h2>";
-echo "<br>";
-echo $comment;
-echo "<br>";
-?>

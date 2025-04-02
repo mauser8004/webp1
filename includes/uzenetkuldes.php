@@ -19,13 +19,7 @@ function test_input($data) {
         $dbh = new mysqli("localhost", "webp1db", "J3grvN7YjfVtBGwD2RxzdS", "webp1db");
 	$dbh->set_charset("utf8");
 
-	if(! isset($_SESSION['login'])) {
-	$sender = "Vendég";
-	}
-	
-	else{
-	$sender = $_SESSION['login'];
-	}
+        $sender = isset($_SESSION['login']) ? $_SESSION['login'] : "Vendég";	
 
         $insertQuery = $dbh->prepare("INSERT INTO mess (date, sender, mess) VALUES ( now(), ?, ?)");
         $insertQuery->bind_param("ss", $sender, $data);

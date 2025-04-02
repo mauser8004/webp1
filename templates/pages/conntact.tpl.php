@@ -1,7 +1,7 @@
 <div>
 
 <form method="POST" action="/includes/uzenetkuldes.php">
- <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+ <textarea name="comment" rows="5" cols="40" placeholder="Max 50 kar."><?php echo $comment;?></textarea>
   <input type="submit" name="submit" value="Küldés">  
 </form>
 <script>

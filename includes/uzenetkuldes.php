@@ -3,7 +3,8 @@ $comment =  "";
 
 if (empty($_POST["comment"])) {
     $comment = "";
-  } else {
+	}
+else {
     $comment = test_input($_POST["comment"]);
   }
 function test_input($data) {
@@ -30,12 +31,8 @@ function test_input($data) {
         $insertQuery->bind_param("ssss", $sender, $data);
         $insertQuery->execute();
 
-
 	}
-
-
-
-      
+   
      catch (mysqli_sql_exception $e) {
 
 
@@ -45,9 +42,9 @@ function test_input($data) {
 }
 
 
-  header("Location: {$_SERVER['HTTP_REFERER']}");
-  exit;
-}
+//  header("Location: {$_SERVER['HTTP_REFERER']}");
+//  exit;
+
 
 ?>
 

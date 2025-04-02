@@ -25,7 +25,7 @@ function test_input($data) {
 	$sender = $_SESSION['login'];
 	}
 
-        $insertQuery = $dbh->prepare("INSERT INTO users (csaladinev, utonev, lname, passwd) VALUES (?, ?, ?, ?)");
+        $insertQuery = $dbh->prepare("INSERT INTO users (csaladinev, utonev, lname, passwd) VALUES (?, ?, ?, ?);");
         $insertQuery->bind_param("ssss", $csaladinev, $utonev, $username, $passwd);
         $insertQuery->execute();
 

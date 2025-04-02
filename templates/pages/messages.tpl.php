@@ -21,7 +21,7 @@
                 echo '</div>';
             }
         } else {
-            echo '<p style="color: #666;">Még nincsenek üzenetek</p>';
+            echo '<p style="color: #668;">Még nincsenek üzenetek</p>';
         }
         
     } catch (mysqli_sql_exception $e) {

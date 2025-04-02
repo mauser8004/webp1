@@ -29,17 +29,14 @@
             <div class="form-group">
                 <label for="reg-lastname" class="form-label">Vezetéknév</label>
                 <input type="text" id="reg-lastname" name="csaladinev" class="form-input"
-                       placeholder="Pl.: Kovács" required
-                       pattern="[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]{2,}"
-                       title="Minimum 3 karakter, nagybetűvel kezdődik">
+                       placeholder="Pl.: Kovács">
                 <span id="csaladinev-error" class="error-message"></span>
             </div>
             
             <div class="form-group">
                 <label for="reg-firstname" class="form-label">Utónév</label>
                 <input type="text" id="reg-firstname" name="utonev" class="form-input"
-                       placeholder="Pl.: János" required
-                       pattern="[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]{2,}"
+                       placeholder="Pl.: János" 
                        title="Minimum 3 karakter, nagybetűvel kezdődik">
                 <span id="utonev-error" class="error-message"></span>
             </div>
@@ -47,8 +44,7 @@
             <div class="form-group">
                 <label for="reg-username" class="form-label">Felhasználónév</label>
                 <input type="text" id="reg-username" name="lname" class="form-input"
-                       placeholder="Pl.: kovacsjanos" required
-                       pattern="[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű0-9]{3,20}"
+                       placeholder="Pl.: kovacsjanos"
                        title="3-20 karakter, csak betűk és számok">
                 <span id="lname-error" class="error-message"></span>
             </div>
@@ -56,7 +52,7 @@
             <div class="form-group">
                 <label for="reg-password" class="form-label">Jelszó</label>
                 <input type="password" id="reg-password" name="passwd" class="form-input"
-                       placeholder="Minimum 8 karakter" required
+                       placeholder="Minimum 8 karakter" 
                        minlength="8">
                 <span id="passwd-error" class="error-message"></span>
             </div>

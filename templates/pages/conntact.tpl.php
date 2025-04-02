@@ -12,6 +12,11 @@ document.querySelector('form').addEventListener('submit', function(e) {
     alert('Az üzenet nem maradhat üres');
     document.querySelector('textarea[name="comment"]').focus();
   }
+  if (value.length <= 50) {
+    e.preventDefault(); // megakadályozza az űrlap elküldését
+    alert('Az üzenet maximum 50 karakter hosszú lehet');
+    document.querySelector('textarea[name="comment"]').focus();
+  }
 });
 </script>
 

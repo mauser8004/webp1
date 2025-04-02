@@ -18,7 +18,7 @@ function test_input($data) {
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         $dbh = new mysqli("localhost", "webp1db", "J3grvN7YjfVtBGwD2RxzdS", "webp1db");
 	$dbh->set_charset("utf8");
-
+	session_start();
         $sender = isset($_SESSION['login']) ? $_SESSION['login'] : "Vendég";	
 
         $insertQuery = $dbh->prepare("INSERT INTO mess (date, sender, mess) VALUES ( now(), ?, ?)");

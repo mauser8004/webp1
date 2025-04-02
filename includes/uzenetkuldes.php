@@ -27,7 +27,7 @@ function test_input($data) {
 	$sender = $_SESSION['login'];
 	}
 
-        $insertQuery = $dbh->prepare("INSERT INTO users (date, sender, mess) VALUES ( now(), ?, ?,);");
+        $insertQuery = $dbh->prepare("INSERT INTO users (date, sender, mess) VALUES ( now(), ?, ?)");
         $insertQuery->bind_param("ss", $sender, $data);
         $insertQuery->execute();
 

@@ -7,10 +7,12 @@ if (empty($_POST["comment"])) {
     $comment = test_input($_POST["comment"]);
   }
 function test_input($data) {
+      
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
-      try {
+
+  try {
         // Kapcsolódás az adatbázishoz
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         $dbh = new mysqli("localhost", "webp1db", "J3grvN7YjfVtBGwD2RxzdS", "webp1db");
@@ -33,12 +35,14 @@ function test_input($data) {
 
 
 
+      
+     catch (mysqli_sql_exception $e) {
 
+
+        echo "Hiba történt: " . $e->getMessage();
 
       }
-     catch (mysqli_sql_exception $e) {
-        echo "Hiba történt: " . $e->getMessage();
-    }
+}
 
 
   header("Location: {$_SERVER['HTTP_REFERER']}");

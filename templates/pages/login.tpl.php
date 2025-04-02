@@ -30,10 +30,41 @@
         </form>
     </div>
 </div>
-
 <script>
-/* A JS validáció VÁLTOZATLANUL MARAD! */
 document.addEventListener('DOMContentLoaded', function() {
-    // ... (eredeti JS kód változatlan) ...
+  // Vezetéknév validálása
+  document.querySelector('input[name="csaladinev"]').addEventListener('blur', function() {
+    const value = this.value.trim();
+    if (value.length < 3 || !/^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(value)) {
+      alert('A vezetéknév minimum 3 karakteres és nagybetűvel kezdődik!');
+      this.focus();
+    }
+  });
+
+  // Utónév validálása
+  document.querySelector('input[name="utonev"]').addEventListener('blur', function() {
+    const value = this.value.trim();
+    if (value.length < 3 || !/^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(value)) {
+      alert('Az utónév minimum 3 karakteres és nagybetűvel kezdődik!');
+      this.focus();
+    }
+  });
+
+  // Felhasználónév validálása
+  document.querySelector('input[name="lname"]').addEventListener('blur', function() {
+    if (this.value.trim() === "" || value.lenght < 3) {
+      alert('A felhasználónév megadása kötelező!');
+      this.focus();
+    }
+  });
+
+  // Jelszó validálása - JAVÍTOTT változat
+  //document.querySelector('input[name="passwd"]').addEventListener('blur', function() {
+  //  const value = this.value.trim();
+  //  if (value.length < 8 || value.length > 20) {
+  //    alert('A jelszó 8 és 20 karakter között kell legyen!');
+  //    this.focus();
+  //  }
+  // });
 });
 </script>

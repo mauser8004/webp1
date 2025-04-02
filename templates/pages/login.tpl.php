@@ -19,10 +19,10 @@
                 <input type="text" name="utonev" placeholder="Utónév" required>
                 <span id="utonev-error" class="error"></span>
                 
-                <input type="text" name="lname" placeholder="Felhasználói név" required>
+                <input type="text" name="loginname" placeholder="Felhasználói név" required>
                 <span id="lname-error" class="error"></span>
                 
-                <input type="password" name="passwd" placeholder="Jelszó" required>
+                <input type="password" name="password" placeholder="Jelszó" required>
                 <span id="passwd-error" class="error"></span>
                 
                 <input type="submit" name="regisztracio" value="Regisztráció">
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Felhasználónév validálása
-  document.querySelector('input[name="lname"]').addEventListener('blur', function() {
+  document.querySelector('input[name="loginname"]').addEventListener('blur', function() {
     const value = this.value.trim();
     if (this.value.trim() === "" || value.lenght < 3) {
       alert('A felhasználónév megadása kötelező! Min 3 karakter!');
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Jelszó validálása - JAVÍTOTT változat
-  document.querySelector('input[name="passwd"]').addEventListener('blur', function() {
+  document.querySelector('input[name="password"]').addEventListener('blur', function() {
     const value = this.value.trim();
     if (value.length < 8 || value.length > 20) {
       alert('A jelszó 8 és 20 karakter között kell legyen!');

@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['csaladinev'], $_POST['utonev'], $_POST['lname'], $_POST['passwd'])) {
+if (isset($_POST['csaladinev'], $_POST['utonev'], $_POST['loginname'], $_POST['password'])) {
     try {
         // Kapcsolódás az adatbázishoz
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
@@ -9,8 +9,8 @@ if (isset($_POST['csaladinev'], $_POST['utonev'], $_POST['lname'], $_POST['passw
         // Adatok előkészítése
         $csaladinev = $_POST['csaladinev'];
         $utonev = $_POST['utonev'];
-        $username = $_POST['lname'];
-        $passwd = hash('sha512', $_POST['passwd']);
+        $username = $_POST['loginname'];
+        $passwd = hash('sha512', $_POST['password']);
 
         // Ellenőrizzük, hogy létezik-e már a felhasználónév
         $checkQuery = $dbh->prepare("SELECT id FROM users WHERE lname = ?");

@@ -7,7 +7,7 @@
         $dbh->set_charset("utf8");
         
         // Üzenetek lekérdezése (a legújabbak legfelül)
-        $query = $dbh->query("SELECT sender, mess, date FROM users ORDER BY date DESC");
+        $query = $dbh->query("SELECT sender, mess, date FROM mess ORDER BY date DESC");
         
         if ($query->num_rows > 0) {
             while ($row = $query->fetch_assoc()) {

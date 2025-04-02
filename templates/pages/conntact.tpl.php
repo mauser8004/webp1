@@ -1,3 +1,4 @@
+<h3>Küldjön üzenetet</h3>
 <div class="contact-form">
     <form method="POST" action="/includes/uzenetkuldes.php">
         <textarea name="comment" rows="5" placeholder="Max 50 karakter"><?= htmlspecialchars($comment ?? '') ?></textarea>

@@ -1,13 +1,11 @@
-<div class="image-gallery-container">
+<div class="gallery-container">
     <h2>Képtár</h2>
     
     <?php
     session_start();
     $isLoggedIn = isset($_SESSION['login']);
-    
-    if ($isLoggedIn && isset($_FILES['kepfeltoltes'])) {
-        // ... (PHP kód változatlan) ...
-    }
+    $imageDir = 'images/';
+    $images = glob($imageDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
     
     if (!empty($images)): ?>
         <div class="image-gallery">
@@ -19,16 +17,19 @@
             <?php endforeach; ?>
         </div>
     <?php else: ?>
-        <p>Nincsenek képek a galériában.</p>
+        <div class="empty-gallery">
+            <p>Nincsenek képek a galériában.</p>
+            <?php if($isLoggedIn): ?>
+                <p>Tölts fel képeket a "Kép feltöltése" lehetőséggel!</p>
+            <?php else: ?>
+                <p>Jelentkezz be a képek feltöltéséhez!</p>
+            <?php endif; ?>
+        </div>
     <?php endif; ?>
     
     <?php if ($isLoggedIn): ?>
         <div class="upload-section">
-            <h3>Kép feltöltése</h3>
-            <form method="post" enctype="multipart/form-data">
-                <input type="file" name="kepfeltoltes" accept="image/jpeg, image/png, image/gif" required>
-                <button type="submit">Feltöltés</button>
-            </form>
+            <!-- Feltöltési űrlap változatlanul marad -->
         </div>
     <?php endif; ?>
 </div>

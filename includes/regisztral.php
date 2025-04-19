@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['csaladinev'], $_POST['utonev'], $_POST['loginname'], $_POST['password'])) {
     try {
-        // Kapcsolódás az adatbázishoz
+        // Kapcsolódás az adatbázishoz másik modszerrel
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         $dbh = new mysqli("localhost", "webp1db", "J3grvN7YjfVtBGwD2RxzdS", "webp1db");
         $dbh->set_charset("utf8");

@@ -1,5 +1,6 @@
+
+    <h2>Üzenetek</h2>
 <div class="message-box">
-    <h3>Üzenetek</h3>
     
     <?php
     try {

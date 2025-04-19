@@ -63,14 +63,6 @@ if (isset($_POST['lname'], $_POST['passwd'])) {
    catch (PDOException $e) {
 	echo "Hiba: ".$e->getMessage();
 	}
-   /* catch (mysqli_sql_exception $e) {
-
-        // Log the error (in production you'd log to a file)
-        error_log("Login error: " . $e->getMessage());
-        
-        header("Location: /");
-        exit();
-    }*/
 } else {
     header("Location: /");
     exit();

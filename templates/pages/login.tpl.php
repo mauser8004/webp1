@@ -1,5 +1,9 @@
+<?php
+session_start();
+?>
 <div class="auth-container">
-    <form action="/includes/belep.php" method="POST" class="auth-form">
+<?php if (isset($_SESSION['hiba'])){  ?> <p style = "color: red; font-family: verdana;"> Hibás felhasználóinév vagy Jelszó!</p><?php session_unset(); } ?>
+     <form action="/includes/belep.php" method="POST" class="auth-form">
         <fieldset>
             <legend>Bejelentkezés</legend>
             <input type="text" name="lname" placeholder="Felhasználó" required>

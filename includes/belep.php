@@ -30,6 +30,14 @@ if (isset($_POST['lname'], $_POST['passwd'])) {
             // Regenerate session ID for security
             session_regenerate_id(true);
         }
+	else {
+		
+            session_start();
+        $_SESSION['hiba'] = '1';
+        header("Location: /login");
+        exit();
+	    } 
+        
         
         $stmt->close();
         $dbh->close();
@@ -48,3 +56,20 @@ if (isset($_POST['lname'], $_POST['passwd'])) {
     exit();
 }
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Belépés</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <?php if(isset($uzenet)) { ?>
+            <h1><?= $uzenet ?></h1>
+            <?php if($ujra) { ?>
+                <a href="/login">Próbálja újra!</a>
+<?php
+		}
+
+         }  ?>
+    </body>
+</html>

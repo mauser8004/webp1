@@ -1,8 +1,8 @@
-<h3>Küldjön üzenetet az oldal tulajdonosa számára</h3>
+<h2>Küldjön üzenetet az oldal tulajdonosa számára</h2>
 <div class="contact-form">
     <form method="POST" action="/includes/uzenetkuldes.php">
         <textarea name="comment" rows="5" placeholder="Max 50 karakter"><?= htmlspecialchars($comment ?? '') ?></textarea>
-        <button type="submit" name="submit">Küldés</button>
+        <input type="submit" name="submit" value="Küldés">
     </form>
 </div>
 

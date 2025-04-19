@@ -9,6 +9,7 @@ if (isset($_POST['lname'], $_POST['passwd'])) {
 	$dbh = new PDO('mysql:host=localhost;dbname=webp1db', 'webp1db', 'J3grvN7YjfVtBGwD2RxzdS',
 	array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 	$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
+	//$sqlSelect = "select csaladinev, utonev from users where lname = :bejelentkezes and passwd = :jelszo ";
 	$sqlSelect = "select csaladinev, utonev from users where lname = :bejelentkezes and passwd = :jelszo ";
 
         $passwd = hash('sha512', $_POST['passwd']);
@@ -26,31 +27,30 @@ if (isset($_POST['lname'], $_POST['passwd'])) {
 	$dbh->set_charset("utf8");*/
         
         // User authentication with prepared statement
-        /*$username = $dbh->real_escape_string($_POST['lname']); // Additional safety
-        $passwd = hash('sha512', $_POST['passwd']);
+        //$username = $dbh->real_escape_string($_POST['lname']); // Additional safety
+        /*$passwd = hash('sha512', $_POST['passwd']);
         
         $stmt = $dbh->prepare("SELECT csaladinev, utonev FROM users WHERE lname = ? AND passwd = ?");
         $stmt->bind_param("ss", $username, $passwd);
         $stmt->execute();
         $result = $stmt->get_result();
 	$row = $result->fetch_assoc();*/
-
+	
         
         if ($row) {
-            session_start();
             $_SESSION['csn'] = $row['csaladinev'];
             $_SESSION['un'] = $row['utonev'];
-            $_SESSION['login'] = $username;
+            $_SESSION['login'] = $_POST['lname'];
             
             // Regenerate session ID for security
             session_regenerate_id(true);
         }
 	else {
 		
-            session_start();
-        $_SESSION['hiba'] = '1';
-        header("Location: /login");
-        exit();
+            	session_start();
+        	$_SESSION['hiba'] = '1';
+        	header("Location: /login");
+        	exit();
 	    } 
         
         
@@ -59,13 +59,18 @@ if (isset($_POST['lname'], $_POST['passwd'])) {
         
         header("Location: /");
         exit();
-    } catch (mysqli_sql_exception $e) {
+    }
+   catch (PDOException $e) {
+	echo "Hiba: ".$e->getMessage();
+	}
+   /* catch (mysqli_sql_exception $e) {
+
         // Log the error (in production you'd log to a file)
         error_log("Login error: " . $e->getMessage());
         
         header("Location: /");
         exit();
-    }
+    }*/
 } else {
     header("Location: /");
     exit();
